@@ -16,7 +16,7 @@
 2: 네비게이션 바 수정
 3: 챔피언 카드 추가
 4: 모달창 추가하기
-<img scr="스크린샷 2026-03-25 162059.png">
+<img src="스크린샷 2026-03-25 162059.png">
 
 ## 5주차 수업 내용
 1: 모달창 구성하기
@@ -29,6 +29,6 @@
 1: js 폴더 생성하기
 2: Js 폴더에 test.js 파일 생성
 3: 검색창 구글에 연동하기
-<img src="![alt text](image-2.png)" width="45%" alt="1 화면">
-<img src="![alt text](image-4.png)" width="45%" alt="2 화면">
-<img src="![alt text](image-3.png)" width="45%" alt="3 화면">
+<img src="image-2.png" width="45%" alt="1 화면">
+<img src="image-4.png" width="45%" alt="2 화면">
+<img src="image-3.png" width="45%" alt="3 화면">
