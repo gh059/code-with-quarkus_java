@@ -23,7 +23,10 @@ const NEWS = [
 // ── 검색 실행 ────────────────────────────────────────────────
 function performSearch(query) {
     const q = query.trim().toLowerCase(); // 앞 뒤 공백제거, 소문자 변환
-    if (!q) return;
+    if (!q) {
+    showMainScreen();
+    return;
+}
     document.getElementById('searchKeywordDisplay').textContent = `"${query}"`; // 검색어 인식
 // 챔피온 데이터에서 이름, 영문명, 역할군, 라인 중 하나라도 검색어에 포함되면
     const champResults = CHAMPIONS.filter(c =>
@@ -42,7 +45,8 @@ function performSearch(query) {
         champList.innerHTML = `<div class="no-result"><h4>검색 결과 없음</h4><p>"${query}"에 해당하는 챔피언이 없습니다.</p></div>`;
     } else {
         champList.innerHTML = champResults.map(c => `
-        <div class="search-result-card d-flex align-items-center p-0 overflow-hidden">
+        <div class="search-result-card d-flex align-items-center p-0 overflow-hidden"
+        onclick="showMainScreen()" style="cursor:pointer;">
         <img src="${c.img}" alt="${c.name}">
         <div class="p-3">
             <div style="font-weight:700; font-size:1rem; color:#111;">${c.name} <span style="color:#888; font-size:0.85rem;">(${c.engName})</span></div>
@@ -65,8 +69,11 @@ newsList.innerHTML = `<div class="no-result"><h4>검색 결과 없음</h4><p>"${
 `).join('');
 }
 switchCategory('champion', document.querySelector('.search-category-item')); // 챔피온 탭이 먼저 보임
-document.querySelector('.hero').classList.add('d-none'); // 히어로 섹션 숨김
-document.querySelectorAll('section:not(#searchResults)').forEach(s => s.classList.add('d-none')); // 나머지 섹션 숨김
+document.querySelectorAll('section').forEach(s => {
+    if (s.id !== 'searchResults') {
+        s.classList.add('d-none');
+    }
+});
 document.getElementById('searchResults').classList.remove('d-none'); // 기타 섹션까지 숨김
 document.getElementById('searchResults').style.display = 'block'; // 결과 섹션만 출력
 }
@@ -86,3 +93,15 @@ document.getElementById('searchForm').addEventListener('submit', function(e) {
     performSearch(query);
 });
     
+function showMainScreen() {
+    // 검색 결과 숨기기
+    document.getElementById('searchResults').classList.add('d-none');
+    document.getElementById('searchResults').style.display = 'none';
+
+    // 메인 화면 다시 보이기
+    document.querySelectorAll('section').forEach(s => {
+        if (s.id !== 'searchResults') {
+            s.classList.remove('d-none');
+        }
+    });
+}

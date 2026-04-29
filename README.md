@@ -46,3 +46,15 @@
 <img src="image-5.png" width="45%" alt="1 화면">
 </div>
 <br>
+
+## 9주차 수업 내용 
+
+1: html토글, css버튼, 토글함수를 추가하여 첫 lol 페이지 다크모드/ 라이트 모드 전환하기
+2: pom.xml 파일 코드를 수정하여 프로젝트 내부 의존성 추가
+3: 데이터 베이스 연동하여 챔피온 정보확인, sql 제어편리
+<div align="center">
+<img src="image-6.png" width="45%" alt="1 화면">
+<img src="image-7.png" width="45%" alt="2 화면">
+<img src="image-8.png" width="45%" alt="3 화면">
+</div>
+<br>
